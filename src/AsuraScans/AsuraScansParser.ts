@@ -7,7 +7,7 @@ import {
     Tag,
     HomeSectionType,
     HomeSection
-} from '@paperback/types'
+} from '@paperback/types/lib/compat/0.8'
 
 import { decode as decodeHTMLEntity } from 'html-entities'
 import { CheerioAPI } from 'cheerio'

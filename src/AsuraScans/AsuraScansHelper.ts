@@ -1,6 +1,6 @@
 import {
     Tag
-} from '@paperback/types'
+} from '@paperback/types/lib/compat/0.8'
 
 
 export function getIncludedTagBySection(section: string, tags: Tag[]): any {

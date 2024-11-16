@@ -14,12 +14,13 @@ import {
     Response,
     SearchRequest,
     SearchResultsProviding,
+    Source,
     SourceInfo,
     SourceIntents,
     SourceManga,
     Tag,
     TagSection
-} from '@paperback/types'
+} from '@paperback/types/lib/compat/0.8'
 
 import * as cheerio from 'cheerio'
 
@@ -41,6 +42,7 @@ import {
 } from './AsuraScansHelper'
 import { setFilters } from './AsuraScansUtils'
 
+
 const AS_DOMAIN = 'https://asuracomic.net'
 const AS_API_DOMAIN = 'https://gg.asuracomic.net'
 
@@ -58,7 +60,8 @@ export const AsuraScansInfo: SourceInfo = {
     sourceTags: []
 }
 
-export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, MangaProviding, SearchResultsProviding {
+// export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, MangaProviding, SearchResultsProviding {
+export class AsuraScans extends Source {
 
     // ----REQUEST MANAGER----
     requestManager = App.createRequestManager({
@@ -84,7 +87,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
 
     stateManager = App.createSourceStateManager()
 
-    getMangaShareUrl(mangaId: string): string { return `${AS_DOMAIN}/series/${mangaId}` }
+    override getMangaShareUrl(mangaId: string): string { return `${AS_DOMAIN}/series/${mangaId}` }
 
     async getMangaDetails(mangaId: string): Promise<SourceManga> {
         const request = App.createRequest({
@@ -122,7 +125,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
         return parseChapterDetails($, mangaId, chapterId)
     }
 
-    async getHomePageSections(sectionCallback: (section: HomeSection) => void): Promise<void> {
+    override async getHomePageSections(sectionCallback: (section: HomeSection) => void): Promise<void> {
         console.log('homepage soup')
         const request = App.createRequest({
             url: AS_DOMAIN,
@@ -135,7 +138,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
         await parseHomeSections(this, $, sectionCallback)
     }
 
-    async getViewMoreItems(homepageSectionId: string, metadata: any): Promise<PagedResults> {
+    override async getViewMoreItems(homepageSectionId: string, metadata: any): Promise<PagedResults> {
         if (metadata?.completed) return metadata
 
         const page: number = metadata?.page ?? 1
@@ -166,7 +169,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
         })
     }
 
-    async getSearchTags(): Promise<TagSection[]> {
+    override async getSearchTags(): Promise<TagSection[]> {
         console.log('search tag soup')
         try {
             const request = App.createRequest({
@@ -187,7 +190,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
         }
     }
 
-    async supportsTagExclusion(): Promise<boolean> {
+    override async supportsTagExclusion(): Promise<boolean> {
         return false
     }
 
@@ -230,7 +233,7 @@ export class AsuraScans implements ChapterProviding, HomePageSectionsProviding, 
         }
     }
 
-    async getCloudflareBypassRequestAsync(): Promise<Request> {
+    override async getCloudflareBypassRequestAsync(): Promise<Request> {
         return App.createRequest({
             url: AS_DOMAIN,
             method: 'GET',
