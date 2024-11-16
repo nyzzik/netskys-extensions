@@ -1,0 +1,1 @@
+{"version":"3.1.0","name":"Mangahub","icon":"icon.png","developers":[{"name":"nyzzik","github":"nyzzik"}],"description":"Extension that pulls manga from mangahub.io","contentRating":"MATURE","badges":[{"label":"Buggy","textColor":"black","backgroundColor":"red"}],"capabilities":21,"id":"MangaHub"}

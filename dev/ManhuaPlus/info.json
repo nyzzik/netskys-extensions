@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"ManhuaPlus","icon":"icon.png","developers":[{"name":"nyzzik","github":"nyzzik"}],"description":"Extension that pulls manga from manhuaplus.com","contentRating":"SAFE","badges":[{"label":"Buggy","textColor":"black","backgroundColor":"red"}],"capabilities":53,"id":"ManhuaPlus"}

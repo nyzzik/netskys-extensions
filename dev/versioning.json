@@ -1,5 +1,5 @@
 {
-  "buildTime": "2024-11-16T18:10:14.499Z",
+  "buildTime": "2024-11-16T18:53:45.769Z",
   "builtWith": {
     "toolchain": "1.0.0-alpha.28",
     "types": "1.0.0-alpha.28"
@@ -24,6 +24,50 @@
       "badges": [],
       "capabilities": 39,
       "id": "AsuraScans"
+    },
+    {
+      "version": "3.1.0",
+      "name": "Mangahub",
+      "icon": "icon.png",
+      "developers": [
+        {
+          "name": "nyzzik",
+          "github": "nyzzik"
+        }
+      ],
+      "description": "Extension that pulls manga from mangahub.io",
+      "contentRating": "MATURE",
+      "badges": [
+        {
+          "label": "Buggy",
+          "textColor": "black",
+          "backgroundColor": "red"
+        }
+      ],
+      "capabilities": 21,
+      "id": "MangaHub"
+    },
+    {
+      "version": "1.0.0",
+      "name": "ManhuaPlus",
+      "icon": "icon.png",
+      "developers": [
+        {
+          "name": "nyzzik",
+          "github": "nyzzik"
+        }
+      ],
+      "description": "Extension that pulls manga from manhuaplus.com",
+      "contentRating": "SAFE",
+      "badges": [
+        {
+          "label": "Buggy",
+          "textColor": "black",
+          "backgroundColor": "red"
+        }
+      ],
+      "capabilities": 53,
+      "id": "ManhuaPlus"
     }
   ]
 }
