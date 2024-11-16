@@ -3610,7 +3610,7 @@ Type: ${row["type"]}`
   // src/MangaHub/main.ts
   var main_exports = {};
   __export(main_exports, {
-    AsuraScans: () => AsuraScans
+    Mangahub: () => Mangahub2
   });
   init_buffer();
 
@@ -4253,7 +4253,7 @@ Type: ${row["type"]}`
 
   // src/MangaHub/main.ts
   var import__3 = __toESM(require__());
-  var AsuraScans = (0, import__3.CompatWrapper)(
+  var Mangahub2 = (0, import__3.CompatWrapper)(
     { registerHomeSectionsInInitialise: true },
     new Mangahub(void 0)
   );

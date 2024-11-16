@@ -4436,7 +4436,7 @@ Type: ${row["type"]}`
   // src/ManhuaPlus/main.ts
   var main_exports = {};
   __export(main_exports, {
-    AsuraScans: () => AsuraScans
+    ManhuaPlus: () => ManhuaPlus2
   });
   init_buffer();
 
@@ -19230,7 +19230,7 @@ Please go to the homepage of <${this.baseUrl}> and press the cloud icon.`);
 
   // src/ManhuaPlus/main.ts
   var import__3 = __toESM(require__());
-  var AsuraScans = (0, import__3.CompatWrapper)(
+  var ManhuaPlus2 = (0, import__3.CompatWrapper)(
     { registerHomeSectionsInInitialise: true },
     new ManhuaPlus(void 0)
   );
